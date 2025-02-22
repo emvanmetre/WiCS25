@@ -20,16 +20,21 @@ const Navbar = (props: NavbarProps) => {
   }, [location, setCurrPath])
 
   const makeSticky = () => {
-    if (window.scrollY >= 20) {
-      if (!isSticky) {
-        setIsInvis(false)
+    if (location.pathname == '/') {
+      if (window.scrollY >= 20) {
+        if (!isSticky) {
+          setIsInvis(false)
+        }
+        setIsSticky(true)
+      } else {
+        if (isSticky) {
+          setIsInvis(true)
+        }
+        setIsSticky(false)
       }
-      setIsSticky(true)
     } else {
-      if (isSticky) {
-        setIsInvis(true)
-      }
-      setIsSticky(false)
+      setIsSticky(true)
+      setIsInvis(false)
     }
   }
   window.addEventListener('scroll', makeSticky)
@@ -42,7 +47,7 @@ const Navbar = (props: NavbarProps) => {
     return (
       <nav className={navClasses}>
         <NavList size="sm">
-          <Menu icon="menu" iconSize="lg" iconColor="colors-purple-600" buttonColor="blank">
+          <Menu icon="menu" iconSize="lg" iconColor="colors-primary-1" buttonColor="blank">
             <MenuItem isDisabled textValue="About">
               <Link to="/about" type="nav-menu" selected={currPath === '/about'}>
                 <Text slot="label">About</Text>
@@ -61,7 +66,7 @@ const Navbar = (props: NavbarProps) => {
           </Menu>
         </NavList>
         <Link to="/" type="nav">
-          <Icon svg="logo" size="lg" color={`${props.darkMode ? 'colors-purple-600' : 'colors-purple-600'}`} />
+          <Icon svg="logo" size="lg" color={`${props.darkMode ? 'colors-primary-1' : 'colors-primary-1'}`} />
           <Text font="display" size="xs">
             Elizabeth Van Metre
           </Text>
@@ -71,8 +76,8 @@ const Navbar = (props: NavbarProps) => {
   } else {
     return (
       <nav className={navClasses}>
-        <Link to="/" type="nav">
-          <Icon svg="logo" color="colors-purple-600" size="lg" />
+        <Link to="/" type="nav-title">
+          <Icon svg="logo" color="colors-primary-1" size="lg" />
           <Text font="display" size="xs">
             Elizabeth Van Metre
           </Text>

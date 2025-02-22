@@ -7,7 +7,7 @@ const Home = () => {
   const isScreenSmall = useMediaQuery({ maxWidth: '1150px' })
   return (
     <>
-      <div className={isScreenSmall ? 'header-box sm' : 'header-box'}>
+      <div className={isScreenSmall ? 'home-bg sm' : 'home-bg'}>
         {/* <RetroWindowSVG classNames={isScreenSmall ? 'retro-window-sm' : 'retro-window'} />
         <RetroGridSVG classNames={isScreenSmall ? 'retro-grid-sm' : 'retro-grid'} />
         <InnovateSVG classNames={'innovate-logo'} small={isScreenSmall} /> */}

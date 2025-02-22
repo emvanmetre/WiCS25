@@ -1,0 +1,62 @@
+@use './tokens.scss';
+
+.link {
+    color: tokens.$colors-primary-plum;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+
+    &.nav-link {
+        margin-right: 2rem;
+    }
+
+    &.nav-menu-link {
+        flex-direction: column;
+        margin-right: 0px;
+        padding: tokens.$size-spacing-2 tokens.$size-spacing-4;
+        border-radius: tokens.$size-radius-4px;
+
+        &.selected {
+            color: tokens.$colors-primary-grape;
+            // background: tokens.$colors-purple-200;
+        }
+
+        &:hover {
+            // color: tokens.$colors-primary-1;
+            // background: tokens.$colors-purple-100;
+        }
+    
+        &:active {
+            // color: tokens.$colors-primary-grape;
+            // background: tokens.$colors-purple-200;
+        }
+    }
+
+    &.nav-title-link {
+        color: tokens.$colors-primary-1;
+        flex-direction: column;
+        margin-right: 0px;
+        padding: tokens.$size-spacing-2 tokens.$size-spacing-4;
+        border-radius: tokens.$size-radius-4px;
+
+        &:hover {
+            color: tokens.$colors-primary-fuschia;
+            //background: tokens.$colors-purple-100;
+        }
+    
+        &:active {
+            color: tokens.$colors-primary-violet;
+            //background: tokens.$colors-purple-200;
+        }
+    }
+
+    &:hover {
+        color: tokens.$colors-primary-1;
+    }
+
+    &:active {
+        color: tokens.$colors-primary-grape;
+    }
+}
