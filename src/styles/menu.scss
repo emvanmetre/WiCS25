@@ -1,0 +1,26 @@
+@use './tokens.scss';
+
+.menu {
+    max-height: inherit;
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 2px;
+    min-width: 150px;
+    box-sizing: border-box;
+}
+
+.menu-item {
+    margin: 2px;
+    padding: tokens.$size-spacing-2 tokens.$size-spacing-4;
+    border-radius: tokens.$size-spacing-4;
+    outline: none;
+    cursor: default;
+    font-size: tokens.$size-text-16;
+    position: relative;
+    display: grid;
+    grid-template-areas:
+        'label kbd'
+        'desc  kbd';
+    align-items: center;
+    forced-color-adjust: none;
+}

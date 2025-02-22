@@ -1,0 +1,124 @@
+@use './tokens.scss';
+
+@keyframes popover-slide-top {
+    0% {
+      opacity: 0;
+      transform: translateY(-15%);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes popover-slide-right {
+    0% {
+      opacity: 0;
+      transform: translateX(15%);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes popover-slide-bottom {
+    0% {
+      opacity: 0;
+      transform: translateY(15%);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes popover-slide-left {
+    0% {
+      opacity: 0;
+      transform: translateX(-15%);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes popover-fade-in {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+
+.popover {
+    $animation-speed: 0.4s;
+    $arrow-size: 16px;
+
+    padding: tokens.$size-spacing-16;
+    border-radius: tokens.$size-spacing-8;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+    
+
+    &.popover-skin-light {
+        background-color: tokens.$colors-cream-100;
+        border: tokens.$size-spacing-1 solid tokens.$colors-cream-400;
+    }
+    
+    .popover-arrow {
+        position: absolute;
+        fill: tokens.$colors-cream-100;
+        stroke: tokens.$colors-cream-400;
+        stroke-width: 1px;
+        width: calc($arrow-size * 2);
+        height: calc($arrow-size * 2);
+      }
+    
+      &[data-placement='top'] {
+        animation: $animation-speed popover-slide-top;
+        margin-bottom: $arrow-size;
+    
+        .popover-arrow {
+          top: 100%;
+          transform: translateX(-50%);
+        }
+      }
+    
+      &[data-placement='bottom'] {
+        animation: $animation-speed popover-slide-bottom;
+        margin-top: $arrow-size;
+    
+        .popover-arrow {
+          bottom: 100%;
+          transform: translateX(-50%) rotate(180deg);
+        }
+      }
+    
+      &[data-placement='left'] {
+        animation: $animation-speed popover-slide-left;
+        margin-right: $arrow-size;
+    
+        .popover-arrow {
+          left: 100%;
+          transform: translateY(-50%) rotate(-90deg);
+        }
+      }
+    
+      &[data-placement='right'] {
+        animation: $animation-speed popover-slide-right;
+        margin-left: $arrow-size;
+    
+        .popover-arrow {
+          right: 100%;
+          transform: translateY(-50%) rotate(90deg);
+        }
+      }
+}
+

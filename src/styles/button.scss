@@ -1,0 +1,33 @@
+@use './tokens.scss';
+
+.button {
+    padding: tokens.$size-spacing-4;
+    border: none;
+    border-radius: tokens.$size-spacing-4;
+    &.button-blank {
+        background-color: transparent;
+    }
+    &:not(.button-dark) {
+        &.button-primary {
+            background-color: tokens.$colors-purple-600;
+        }
+        &.button-secondary {
+            background-color: tokens.$colors-purple-0;
+        }
+        &.button-tertiary {
+            background-color: tokens.$colors-cream-100;
+        }
+    }
+    // TODO: update darkmode colors
+    &.button-dark {
+        &.button-primary {
+            background-color: tokens.$colors-purple-600;
+        }
+        &.button-secondary {
+            background-color: tokens.$colors-purple-0;
+        }
+        &.button-tertiary {
+            background-color: tokens.$colors-cream-100;
+        }
+    }
+}
