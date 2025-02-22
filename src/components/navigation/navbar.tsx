@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
 import { Link, Icon, Menu, MenuItem, NavList, Text } from '../index'
-import '../../styles/navbar.scss'
+import '../../style.css'
 import { useLocation } from 'react-router-dom'
 
 type NavbarProps = {

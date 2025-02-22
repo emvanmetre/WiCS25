@@ -1,55 +1,38 @@
 const Colors = {
-    // Blues
-    blue: {
-        '100': '#F7FAFF',
-        '200': '#D0DEFA',
-        '300': '#A6BFF0',
-        '400': '#7B9DDF',
-        '500': '#5278C5',
-        '600': '#2D54A1',
-        '700': '#103173',
-        '800': '#001540',
-    },
-    // Pinks
-    pink: {
-        '100': '#FFEDFC',
-        '200': '#FAD7F4',
-        '300': '#EDBCE5',
-        '400': '#D79CCD',
-        '500': '#B376A9',
-        '600': '#87507E',
-    },
-    // Purples
-    purple: {
-        '0': '#FBF7FF',
-        '100': '#D8C6E9',
-        '200': '#B89AD3',
-        '300': '#9C77BE',
-        '400': '#835CA8',
-        '500': '#6A468D',
-        '600': '#5B377C',
-        '700': '#492A66',
-        '800': '#391F50',
-        '900': '#29163B',
-    },
-    // Grays
-    gray: {
-        '100': '#FFFFFF',
-        '200': '#F1F3F8',
-        '300': '#DDE2EB',
-        '400': '#C2C8D4',
-        '500': '#9EA4B2',
-        '600': '#6F7682',
-        '700': '#383C44',
-        '800': '#000000',
-    },
-    // Creams
-    cream: {
-        '100': '#FFFEFC',
-        '200': '#FDFBF7',
-        '300': '#F8F5EF',
-        '400': '#F7F3EC',
-        '500': '#EDE8E2',
-    },
+  // Blues
+  neutral: {
+    white: '#FFFFFF',
+    cloud: '#F7F7F8',
+    lightmist: '#F0EEF6',
+    mist: '#E8E3FF',
+    deepfog: '#C7C1EA',
+    darkgray: '#575466',
+    lightblack: '#282536',
+    black: '#181622',
+  },
+  // Primary Palette (purples)
+  primary: {
+    '1': '#871189',
+    plum: '#430044',
+    grape: '#69056A',
+    violet: '#9F2EA0',
+    fuschia: '#C33FC6',
+  },
+  // Secondary Palette (pinks)
+  secondary: {
+    '1': '#FF80F3',
+    marshmallow: '#FCF7FB',
+    babypink: '#FFE4FC',
+    peony: '#F1CAED',
+    bubblegum: '#FFAEF7',
+  },
+  // Accent Palette (yellows)
+  accent: {
+    '1': '#FFC045',
+    highlight: '#F9EDD7',
+    sunlight: '#FFDFA1',
+    honey: '#FFCE70',
+    goldenrod: '#E49C0F',
+  },
 }
 export default Colors
