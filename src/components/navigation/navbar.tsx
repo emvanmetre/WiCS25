@@ -17,6 +17,7 @@ const Navbar = (props: NavbarProps) => {
 
   useEffect(() => {
     setCurrPath(location.pathname)
+    makeSticky()
   }, [location, setCurrPath])
 
   const makeSticky = () => {
@@ -47,28 +48,33 @@ const Navbar = (props: NavbarProps) => {
     return (
       <nav className={navClasses}>
         <NavList size="sm">
-          <Menu icon="menu" iconSize="lg" iconColor="colors-primary-1" buttonColor="blank">
+          <Menu icon="menu" iconSize="lg" iconColor="colors-primary-grape" buttonColor="blank">
             <MenuItem isDisabled textValue="About">
               <Link to="/about" type="nav-menu" selected={currPath === '/about'}>
-                <Text slot="label">About</Text>
+                <Text font="display" size="xxs" slot="label">
+                  About
+                </Text>
               </Link>
             </MenuItem>
             <MenuItem isDisabled textValue="Experience">
               <Link to="/about" type="nav-menu" selected={currPath === '/about'}>
-                <Text slot="label">Experience</Text>
+                <Text font="display" size="xxs" slot="label">
+                  Experience
+                </Text>
               </Link>
             </MenuItem>
             <MenuItem isDisabled textValue="About 3">
               <Link to="/project" type="nav-menu" selected={currPath === '/project'}>
-                <Text slot="label">GHH 2024</Text>
+                <Text font="display" size="xxs" slot="label">
+                  GHH 2024
+                </Text>
               </Link>
             </MenuItem>
           </Menu>
         </NavList>
-        <Link to="/" type="nav">
-          <Icon svg="logo" size="lg" color={`${props.darkMode ? 'colors-primary-1' : 'colors-primary-1'}`} />
-          <Text font="display" size="xs">
-            Elizabeth Van Metre
+        <Link to="/" type="nav-title">
+          <Text font="display" size="md">
+            bouquet
           </Text>
         </Link>
       </nav>
@@ -77,24 +83,23 @@ const Navbar = (props: NavbarProps) => {
     return (
       <nav className={navClasses}>
         <Link to="/" type="nav-title">
-          <Icon svg="logo" color="colors-primary-1" size="lg" />
-          <Text font="display" size="xs">
-            Elizabeth Van Metre
+          <Text font="display" size="md">
+            bouquet
           </Text>
         </Link>
         <NavList>
-          <Link to="/project" type="nav">
-            <Text font="body" size="md" weight="bold">
+          <Link to="/project" type="nav" selected={currPath === '/project'}>
+            <Text font="display" size="xs">
               GHH 2024
             </Text>
           </Link>
-          <Link to="/about" type="nav">
-            <Text font="body" size="md" weight="bold">
+          <Link to="/about" type="nav" selected={currPath === '/about'}>
+            <Text font="display" size="xs">
               About
             </Text>
           </Link>
-          <Link to="/about" type="nav">
-            <Text font="body" size="md" weight="bold">
+          <Link to="/about" type="nav" selected={currPath === '/about'}>
+            <Text font="display" size="xs">
               Experience
             </Text>
           </Link>

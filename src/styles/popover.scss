@@ -68,14 +68,14 @@
     
 
     &.popover-skin-light {
-        background-color: tokens.$colors-cream-100;
-        border: tokens.$size-spacing-1 solid tokens.$colors-cream-400;
+        background-color: tokens.$colors-neutral-white;
+        border: tokens.$size-spacing-1 solid tokens.$colors-neutral-mist;
     }
     
     .popover-arrow {
         position: absolute;
-        fill: tokens.$colors-cream-100;
-        stroke: tokens.$colors-cream-400;
+        fill: tokens.$colors-neutral-white;
+        stroke: tokens.$colors-neutral-mist;
         stroke-width: 1px;
         width: calc($arrow-size * 2);
         height: calc($arrow-size * 2);

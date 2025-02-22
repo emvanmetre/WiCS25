@@ -4,13 +4,13 @@
     padding: tokens.$size-spacing-32;
     border-radius: tokens.$size-spacing-16;
     border: tokens.$size-spacing-1 solid #ede8e2;
-    background-color: tokens.$colors-cream-200;
+    background-color: tokens.$colors-neutral-white;
     justify-content: center;
     align-items: center;
     display: inline-flex;
 
     &.card-dark {
-        background: tokens.$colors-cream-200;
+        background: tokens.$colors-neutral-lightblack;
     }
 
     &.card-standard {
@@ -24,6 +24,6 @@
     }
 
     &:active {
-        background-color: tokens.$colors-cream-300;
+        background-color: tokens.$colors-neutral-mist;
     }
 }

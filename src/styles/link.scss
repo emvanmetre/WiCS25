@@ -1,7 +1,7 @@
 @use './tokens.scss';
 
 .link {
-    color: tokens.$colors-primary-plum;
+    color: tokens.$colors-primary-grape;
     text-decoration: none;
     display: flex;
     flex-direction: row;
@@ -10,6 +10,30 @@
 
     &.nav-link {
         margin-right: 2rem;
+
+        &.selected {
+            &.nav-invisible {
+                color: tokens.$colors-accent-highlight;
+
+                &:hover {
+                    color: tokens.$colors-accent-sunlight;
+                }
+            
+                &:active {
+                    color: tokens.$colors-accent-honey;
+                }
+            }
+
+            color: tokens.$colors-primary-fuschia;
+
+            &:hover {
+                color: tokens.$colors-primary-violet;
+            }
+        
+            &:active {
+                color: tokens.$colors-primary-1;
+            }
+        }
     }
 
     &.nav-menu-link {
@@ -19,18 +43,15 @@
         border-radius: tokens.$size-radius-4px;
 
         &.selected {
-            color: tokens.$colors-primary-grape;
-            // background: tokens.$colors-purple-200;
-        }
+            color: tokens.$colors-primary-fuschia;
 
-        &:hover {
-            // color: tokens.$colors-primary-1;
-            // background: tokens.$colors-purple-100;
-        }
-    
-        &:active {
-            // color: tokens.$colors-primary-grape;
-            // background: tokens.$colors-purple-200;
+            &:hover {
+                color: tokens.$colors-primary-violet;
+            }
+        
+            &:active {
+                color: tokens.$colors-primary-1;
+            }
         }
     }
 
@@ -43,20 +64,18 @@
 
         &:hover {
             color: tokens.$colors-primary-fuschia;
-            //background: tokens.$colors-purple-100;
         }
     
         &:active {
             color: tokens.$colors-primary-violet;
-            //background: tokens.$colors-purple-200;
         }
     }
 
     &:hover {
-        color: tokens.$colors-primary-1;
+        color: tokens.$colors-primary-violet;
     }
 
     &:active {
-        color: tokens.$colors-primary-grape;
+        color: tokens.$colors-primary-1;
     }
 }

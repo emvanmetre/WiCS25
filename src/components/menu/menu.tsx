@@ -17,7 +17,7 @@ function Menu<T extends object>({ label, icon, children, ...props }: MenuProps<T
   const buttonColor = props.buttonColor ? `button-${props.buttonColor}` : 'button-primary'
   return (
     <MenuTrigger {...(props + children)}>
-      <Button className={`button ${buttonColor}${props.darkMode ? ' button-dark' : ''}`}>
+      <Button className={`button menu-button ${buttonColor}${props.darkMode ? ' button-dark' : ''}`}>
         <Icon svg={icon} size={props.iconSize} color={props.iconColor}></Icon>
         {label}
       </Button>

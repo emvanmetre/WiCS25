@@ -6,28 +6,36 @@
     border-radius: tokens.$size-spacing-4;
     &.button-blank {
         background-color: transparent;
+
+        &:hover {
+            background-color: rgba(240, 238, 246, 0.5); // TODO: update this to also have a dark option
+        }
+
+        &:active {
+            background-color: rgba(240, 238, 246, 0.7); // TODO: update this to also have a dark option
+        }
     }
     &:not(.button-dark) {
         &.button-primary {
-            background-color: tokens.$colors-purple-600;
+            background-color: tokens.$colors-primary-1;
         }
         &.button-secondary {
-            background-color: tokens.$colors-purple-0;
+            background-color: tokens.$colors-secondary-1;
         }
         &.button-tertiary {
-            background-color: tokens.$colors-cream-100;
+            background-color: tokens.$colors-accent-1;
         }
     }
     // TODO: update darkmode colors
     &.button-dark {
         &.button-primary {
-            background-color: tokens.$colors-purple-600;
+            background-color: tokens.$colors-primary-1;
         }
         &.button-secondary {
-            background-color: tokens.$colors-purple-0;
+            background-color: tokens.$colors-secondary-1;
         }
         &.button-tertiary {
-            background-color: tokens.$colors-cream-100;
+            background-color: tokens.$colors-accent-1;
         }
     }
 }

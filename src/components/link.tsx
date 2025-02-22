@@ -23,7 +23,7 @@ type LinkProps = {
 
 const Link = (props: LinkProps) => {
   const classNames = `link${props.darkMode ? ' link-dark' : ''}`
-  if (props.type === 'nav' || props.type === 'nav-menu') {
+  if (props.type === 'nav' || props.type === 'nav-menu' || props.type === 'nav-title') {
     return (
       <NavLink to={props.to} className={`${classNames} ${props.type}-link${props.selected ? ' selected' : ''}`} target="_self" aria-label={props.ariaLabel}>
         {props.children}
