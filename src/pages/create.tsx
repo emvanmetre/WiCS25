@@ -8,7 +8,7 @@ const Create = () => {
   const isScreenSmall = useMediaQuery({ maxWidth: '1150px' })
   return (
     <>
-      <div className="wide-flex-col content col-100 nav-space">
+      <div className="wide-flex-col center content col-100 nav-space">
         <ComponentView></ComponentView>
       </div>
     </>
