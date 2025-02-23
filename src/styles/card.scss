@@ -14,8 +14,8 @@
     }
 
     &.card-standard {
-        height: 8rem;
-        width: 12rem;
+        height: 12rem;
+        width: 18rem;
         border-radius: tokens.$size-spacing-32;
     }
 
@@ -26,4 +26,11 @@
     &:active {
         background-color: tokens.$colors-neutral-mist;
     }
+}
+
+.name-container {
+    text-align: center;
+    overflow: hidden;
+    max-height: 3rem;
+    width: 100%;
 }

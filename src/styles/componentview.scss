@@ -61,3 +61,12 @@
 .comp-view-light {
     background-color: tokens.$colors-neutral-white;
 }
+
+.html-display-crop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    height: 10rem;
+    overflow: hidden;
+}

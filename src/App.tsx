@@ -1,11 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 import { Navbar } from './components'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import { Home, Create } from './pages'
-// import About from "./pages/about";
-// import Blogs from "./pages/blogs";
-// import SignUp from "./pages/signup";
-// import Contact from "./pages/contact";
+import { Home, Create, Explore } from './pages'
 import './App.css'
 import './style.css'
 
@@ -27,7 +23,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<Home />} />
+        <Route path="/explore" element={<Explore />} />
         <Route path="/create" element={<Create />} />
         <Route path="/sign-up" element={<Home />} />
       </Routes>

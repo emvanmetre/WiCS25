@@ -72,23 +72,25 @@ const ComponentView = (props: ComponentViewProps) => {
 
   useEffect(() => {
     let processing = true
-    const axiosFetchData = async processing => {
-      await axios
-        .get(`http://localhost:4001/Bouquet/${props.id}`, {
-          withCredentials: true, // Required if using credentials
-        })
-        .then(res => {
-          console.log(res)
-          if (processing) {
-            setHtmlText(res.data.html)
-            setCssText(res.data.css)
-            setJsText(res.data.js)
-            updateText(res.data.html)
-          }
-        })
-        .catch(err => console.log(err))
+    if (props.id) {
+      const axiosFetchData = async (processing: boolean) => {
+        await axios
+          .get(`http://localhost:4001/Bouquet/${props.id}`, {
+            withCredentials: true, // Required if using credentials
+          })
+          .then(res => {
+            console.log(res)
+            if (processing) {
+              setHtmlText(res.data.html)
+              setCssText(res.data.css)
+              setJsText(res.data.js)
+              updateText(res.data.html)
+            }
+          })
+          .catch(err => console.log(err))
+      }
+      axiosFetchData(processing)
     }
-    axiosFetchData(processing)
   }, [])
 
   const axiosPostData = async () => {
@@ -158,7 +160,7 @@ const ComponentView = (props: ComponentViewProps) => {
         </div>
       </div>
 
-      <div>
+      <div className="content">
         <Button className="button-primary" onPress={axiosPostData}>
           <Text font="display" size="xs" weight="semibold">
             Publish
