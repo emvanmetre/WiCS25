@@ -4,7 +4,7 @@ import { Button, ButtonRound, Icon, Text } from './index'
 import { TextField, TextArea } from 'react-aria-components'
 import '../style.css'
 import DOMPurify from 'dompurify'
-import parse from 'html-react-parser'
+import axios from 'axios'
 
 type ComponentViewProps = {
   id?: string
@@ -15,11 +15,15 @@ const ComponentView = (props: ComponentViewProps) => {
   const [sizeLarge, setSizeLarge] = useState(false)
   const [tab, setTab] = useState('html')
   const [curTabText, setCurTabText] = useState('')
-  const [htmlDisplay, setHtmlDisplay] = useState('')
+  const [htmlDisplay, setHtmlDisplay] = useState(<div></div>)
+  let parser = new DOMParser()
 
   const [htmlText, setHtmlText] = useState('')
   const [cssText, setCssText] = useState('')
   const [jsText, setJsText] = useState('')
+
+  const [data, setData] = useState('')
+  const [errors, setErrors] = useState('')
 
   const handleBg = (light: boolean) => {
     if (light) {
@@ -48,8 +52,8 @@ const ComponentView = (props: ComponentViewProps) => {
     }
   }
 
-  function SafeHTMLDisplay({ htmlString }) {
-    const sanitizedHTML = DOMPurify.sanitize(htmlString, { KEEP_CONTENT: true })
+  function SafeHTMLDisplay(newHtml: string) {
+    const sanitizedHTML = DOMPurify.sanitize(newHtml, { KEEP_CONTENT: true })
     console.log(sanitizedHTML)
     return <div dangerouslySetInnerHTML={{ __html: sanitizedHTML }} />
   }
@@ -63,8 +67,30 @@ const ComponentView = (props: ComponentViewProps) => {
       setJsText(text)
     }
     setCurTabText(text)
-    setHtmlDisplay(SafeHTMLDisplay(parse(text)))
-    //console.log(SafeHTMLDisplay(parse(text)))
+    setHtmlDisplay(SafeHTMLDisplay(text))
+  }
+
+  const axiosFetchData = async processing => {
+    await axios
+      .get('http://localhost:4000/Bouquet')
+      .then(res => {
+        if (processing) {
+          setData(res.data)
+        }
+      })
+      .catch(err => console.log(err))
+  }
+
+  const axiosPostData = async () => {
+    const postData = {
+      name: '',
+      id: '',
+      html: htmlText,
+      css: cssText,
+      js: jsText,
+    }
+
+    await axios.post('http://localhost:4000/Bouquet').then(res => setErrors(res.data))
   }
 
   const isScreenSmall = useMediaQuery({ maxWidth: '1150px' })
@@ -118,9 +144,10 @@ const ComponentView = (props: ComponentViewProps) => {
       </div>
 
       <div>
-        <Button>
+        <Button onPress={axiosPostData}>
           <Text>Publish</Text>
         </Button>
+        <Text>{errors}</Text>
       </div>
     </>
   )

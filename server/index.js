@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 // const router = require('./routes/router')
 const mongoose = require('mongoose')
 require('dotenv').config()
+const router = require('./routes/router')
 
 const app = express()
 
@@ -17,7 +18,7 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions))
-//app.use('/', router)
+app.use('/', router)
 
 const dbOptions = { useNewUrlParser: true, useUnifiedTopology: true }
 mongoose

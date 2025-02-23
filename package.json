@@ -43,6 +43,8 @@
   },
   "devDependencies": {
     "@types/node": "^22.13.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "dompurify": "^3.2.4",

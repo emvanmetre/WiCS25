@@ -5,10 +5,15 @@
     height: 500px;
     border: 3px solid tokens.$colors-neutral-deepfog;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &.component-code {
         background-color: tokens.$colors-neutral-white;
-        display: flex;
+       // display: flex;
+        align-items: initial;
+        justify-content: initial;
         flex-direction: row;
         height: calc(500px - tokens.$size-spacing-64);
 
