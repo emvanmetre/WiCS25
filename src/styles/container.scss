@@ -63,6 +63,7 @@
     gap: tokens.$size-spacing-4;
     width: 100%;
     padding: tokens.$size-spacing-4;
+    box-sizing: border-box;
 
     &.align-right {
         justify-content: flex-end;
