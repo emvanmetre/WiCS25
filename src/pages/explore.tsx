@@ -1,21 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { Text, Card, ComponentView } from '../components/'
+import { Text, Card } from '../components/'
 import { useMediaQuery } from 'react-responsive'
 import DOMPurify from 'dompurify'
 import axios from 'axios'
 
 import '../style.css'
-import { group } from 'console'
-
-const createRow = ({ component1, component2, component3 }) => {
-  return (
-    <div className="content-row">
-      {component1 != '' ? createCard(component1) : <></>}
-      {component2 != '' ? createCard(component2) : <></>}
-      {component3 != '' ? createCard(component3) : <></>}
-    </div>
-  )
-}
 
 function SafeHTMLDisplay(newHtml: string) {
   const sanitizedHTML = DOMPurify.sanitize(newHtml, { KEEP_CONTENT: true })
@@ -26,10 +15,6 @@ function SafeHTMLDisplay(newHtml: string) {
 const createCard = (component: any) => {
   // console.log('creating card with' + component)
   return <Card ariaLabel={component.name}> {SafeHTMLDisplay(component.html)}</Card>
-}
-
-const chunkArray = (arr: any, size: number) => {
-  return arr.reduce((chunks, _, i) => (i % size === 0 ? [...chunks, arr.slice(i, i + size)] : chunks), [])
 }
 
 const Explore = () => {
@@ -53,9 +38,9 @@ const Explore = () => {
               // console.log(res.data.map((component: any) => component.name))
               //groupedData = res.data
               makeCards(
-                <div className="content">
+                <div className="content center wrap">
                   {res.data.map(item => (
-                    <Card size="standard" ariaLabel={item.name} key={item._id}>
+                    <Card link={`/component/${item._id}`} size="standard" ariaLabel={item.name} key={item._id}>
                       <div className="content wide-flex-col padding-none">
                         <div className="html-display-crop">{SafeHTMLDisplay(item.html)}</div>
                         <div className="name-container">

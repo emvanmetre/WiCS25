@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from 'react'
 import { Navbar } from './components'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
-import { Home, Create, Explore } from './pages'
+import { Home, Create, Explore, Modify } from './pages'
 import './App.css'
 import './style.css'
 
@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/create" element={<Create />} />
-        <Route path="/sign-up" element={<Home />} />
+        <Route path="/component/:id" element={<Modify />} />
       </Routes>
     </Router>
   )
