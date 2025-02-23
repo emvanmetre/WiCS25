@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useMediaQuery } from 'react-responsive'
-import { ButtonRound } from './index'
+import { Button, ButtonRound } from './index'
 import { TextField } from 'react-aria-components'
 import '../style.css'
 
@@ -11,6 +11,7 @@ type ComponentViewProps = {
 const ComponentView = (props: ComponentViewProps) => {
   const [bgDark, setBgDark] = useState(false)
   const [sizeLarge, setSizeLarge] = useState(false)
+  const [tab, setTab] = useState('html')
 
   const handleBg = (light: boolean) => {
     if (light) {
@@ -27,7 +28,6 @@ const ComponentView = (props: ComponentViewProps) => {
       setSizeLarge(true)
     }
   }
-  console.log(bgDark)
 
   const isScreenSmall = useMediaQuery({ maxWidth: '1150px' })
   return (
@@ -39,7 +39,18 @@ const ComponentView = (props: ComponentViewProps) => {
         </div>
       </div>
       <div className={`content padding-none ${isScreenSmall ? 'col-100' : 'col-40'}`}>
-        <div className={`component-view component-code`}></div>
+        <div className={`component-view component-code`}>
+          <Button className={`toggle-btn${tab === 'html' ? ' selected' : ''}`} onPress={() => setTab('html')}>
+            HTML
+          </Button>
+          <Button className={`toggle-btn${tab === 'cs' ? ' selected' : ''}`} onPress={() => setTab('css')}>
+            CSS
+          </Button>
+          <Button className={`toggle-btn${tab === 'js' ? ' selected' : ''}`} onPress={() => setTab('js')}>
+            JS
+          </Button>
+          <TextField></TextField>
+        </div>
       </div>
     </>
   )

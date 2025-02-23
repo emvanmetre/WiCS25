@@ -38,6 +38,25 @@
             background-color: tokens.$colors-accent-1;
         }
     }
+
+    &.toggle-btn {
+        background-color: tokens.$colors-neutral-lightmist;
+        &:hover {
+            background-color: tokens.$colors-neutral-mist;
+        }
+        &:active {
+            background-color: tokens.$colors-neutral-deepfog;
+        }
+        &.selected {
+            background-color: tokens.$colors-primary-1;
+            &:hover {
+                background-color: tokens.$colors-primary-fuschia;
+            }
+            &:active {
+                background-color: tokens.$colors-primary-violet;
+            }
+        }
+    }
 }
 
 .button-round {

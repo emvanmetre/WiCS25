@@ -12,7 +12,7 @@ interface ButtonProps<T> extends Omit<ReactAriaButtonProps, 'children'> {
 
 function Button<T extends object>({ ...props }: ButtonProps<T>) {
   return (
-    <ReactAriaButton {...props} className={props.className ? `${props.className}` : ''}>
+    <ReactAriaButton {...props} className={`button${props.className ? ` ${props.className}` : ''}`}>
       {props.children}
     </ReactAriaButton>
   )
