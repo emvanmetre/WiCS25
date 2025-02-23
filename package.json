@@ -8,6 +8,7 @@
     "@testing-library/react": "^16.2.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.9",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.10.1",
@@ -17,7 +18,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "npm run build && react-scripts start",
+    "start": "npm run build && concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && node index.js",
+    "client": "react-scripts start",
     "build": "npm run style-build && react-scripts build",
     "style-build": "npx tsc --outDir ./build && node scripts-js/export-tokens.js && node scripts-js/compile-scss.js",
     "test": "react-scripts test",
@@ -46,6 +49,8 @@
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "axios": "^1.7.9",
+    "body-parser": "^1.20.3",
+    "concurrently": "^9.1.2",
     "cors": "^2.8.5",
     "dompurify": "^3.2.4",
     "dotenv": "^16.4.7",
