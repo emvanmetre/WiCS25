@@ -7,6 +7,7 @@ import { Home, Create } from './pages'
 // import SignUp from "./pages/signup";
 // import Contact from "./pages/contact";
 import './App.css'
+import './style.css'
 
 const ScrollToTop = () => {
   const location = useLocation()

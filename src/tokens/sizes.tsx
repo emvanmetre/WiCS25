@@ -8,6 +8,8 @@ const Sizes = {
     '8': '0.5rem',
     '16': '1rem',
     '32': '2rem',
+    '64': '4rem',
+    '72': '5rem',
   },
   radius: {
     none: '0rem',

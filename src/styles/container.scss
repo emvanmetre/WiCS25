@@ -17,17 +17,27 @@
     box-sizing: border-box;
     &.padding-none {
         padding: 0;
+        gap: 0;
     }
 
     @media only screen and (min-width: 1150px) {
         flex-direction: row;
         gap: 30px;
+        &.padding-none {
+            gap: 0;
+        }
+
+        &.wide-flex-col {
+            flex-direction: column;
+            align-items: left;
+        }
     }
 }
 
 .col-100 {
     width: 100%;
     min-width: 600px;
+    display:flex;
 }
 
 .col-40 {
@@ -36,6 +46,7 @@
 
 .col-60 {
     width: 60%;
+    align-items: flex-end;
 }
   
 .justify-center {
@@ -43,3 +54,17 @@
     text-align: center;
 }
   
+.button-row {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    gap: tokens.$size-spacing-4;
+    width: 100%;
+    padding: tokens.$size-spacing-4;
+
+    &.align-right {
+        justify-content: flex-end;
+    }
+}
