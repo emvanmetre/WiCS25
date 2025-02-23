@@ -1,5 +1,21 @@
 @use './tokens.scss';
 
+.bg-light {
+  background: tokens.$colors-neutral-cloud;
+}
+
+.bg-white {
+  background: tokens.$colors-neutral-white;
+}
+
+.bg-dark {
+  background: tokens.$colors-neutral-lightblack;
+}
+
+.nav-space {
+  margin-top: tokens.$size-sem-navbar-height;
+}
+
 .home-bg {
   width: 100%;
   height: 1626px;
@@ -9,4 +25,14 @@
   position: aboslute;
   z-index: -1;
 }
+.spacer-sm {
+  height: 50px;
+}
 
+.spacer-md {
+  height: 100px;
+}
+
+.spacer-lg {
+  height: 200px;
+}

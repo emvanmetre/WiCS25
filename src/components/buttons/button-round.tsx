@@ -4,18 +4,19 @@ import type { ButtonProps as ReactAriaButtonProps } from 'react-aria-components'
 import '../../style.css'
 import { useState } from 'react'
 
-interface ButtonProps<T> extends Omit<ReactAriaButtonProps, 'children'> {
+interface ButtonRoundProps<T> extends Omit<ReactAriaButtonProps, 'children'> {
   className?: string
+  size?: 'sm' | 'md' | 'lg'
   darkMode?: boolean
   children?: React.ReactNode
 }
 
-function Button<T extends object>({ ...props }: ButtonProps<T>) {
+function ButtonRound<T extends object>({ ...props }: ButtonRoundProps<T>) {
   return (
-    <ReactAriaButton {...props} className={props.className ? `${props.className}` : ''}>
+    <ReactAriaButton {...props} className={`button-round ${props.className ? `${props.className} ` : ''}${props.size ?? 'sm'}`}>
       {props.children}
     </ReactAriaButton>
   )
 }
 
-export default Button
+export default ButtonRound

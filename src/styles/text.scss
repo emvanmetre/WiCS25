@@ -61,7 +61,33 @@
 .text-accent {
     font-size: tokens.$size-text-18;
     font-family: 'Libre Bodoni';
-    font-weight: 400;
+    font-weight: 700;
+
+    &.xxs {
+        font-size: tokens.$size-text-29;
+    }
+    &.xs {
+        font-size: tokens.$size-text-36;
+    }
+    &.sm {
+        font-size: tokens.$size-text-45;
+    }
+    &.md {
+        font-size: tokens.$size-text-56;
+    }
+    &.lg {
+        font-size: tokens.$size-text-70;
+    }
+    &.xl {
+        font-size: tokens.$size-text-88;
+    }
+    &.xxl {
+        font-size: tokens.$size-text-96;
+    }
+
+    &.italic {
+        font-style: italic;
+    }
 }
 
 .text-black {

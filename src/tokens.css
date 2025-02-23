@@ -34,6 +34,8 @@
   --size-radius-8px: 0.5rem;
   --size-radius-16px: 1rem;
   --size-radius-32px: 2rem;
+  --size-radius-48px: 3rem;
+  --size-radius-64px: 4rem;
   --size-text-12: 0.75rem;
   --size-text-16: 1rem;
   --size-text-18: 1.125rem;
@@ -44,7 +46,8 @@
   --size-text-56: 3.5rem;
   --size-text-70: 4.375rem;
   --size-text-88: 5.5rem;
+  --size-text-96: 6rem;
   --size-sem-content-padding: 3rem;
   --size-sem-content-margin: ;
-  --size-sem-navbar-height: 3rem;
+  --size-sem-navbar-height: 4rem;
 }

@@ -1,3 +1,4 @@
-import Button from "./button";
+import Button from './button'
+import ButtonRound from './button-round'
 
-export {Button}
+export { Button, ButtonRound }

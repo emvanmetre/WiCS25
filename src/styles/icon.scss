@@ -3,8 +3,11 @@
 @use './token-map.scss';
 
 $-icon-name-svg-map: (
-    '-logo': constants.$icon-logo,
     '-menu': constants.$icon-menu,
+    '-copy': constants.$icon-copy,
+    '-paste': constants.$icon-paste,
+    '-expand': constants.$icon-expand,
+    '-shrink': constants.$icon-shrink,
 );
 
 .icon {

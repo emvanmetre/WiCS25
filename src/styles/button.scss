@@ -39,3 +39,26 @@
         }
     }
 }
+
+.button-round {
+    border-radius: 50%;
+    border: 3px solid tokens.$colors-neutral-mist;
+    margin-left: tokens.$size-spacing-2;
+    margin-right: tokens.$size-spacing-2;
+    &.selected {
+        border: 3px solid tokens.$colors-secondary-1;
+    }
+
+    &.sm {
+        width: tokens.$size-radius-16px;
+        height: tokens.$size-radius-16px;
+    }
+    &.md {
+        width: tokens.$size-radius-32px;
+        height: tokens.$size-radius-32px;
+    }
+    &.lg {
+        width: tokens.$size-radius-64px;
+        height: tokens.$size-radius-64px;
+    }
+}

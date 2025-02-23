@@ -1,0 +1,45 @@
+@use './tokens.scss';
+
+.content-bounded {
+    background: tokens.$colors-neutral-white;
+    margin: tokens.$size-sem-content-margin auto;
+    min-width: 200px;
+    max-width: 1000px;
+    padding: tokens.$size-sem-content-padding;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    padding: tokens.$size-sem-content-padding;
+    box-sizing: border-box;
+    &.padding-none {
+        padding: 0;
+    }
+
+    @media only screen and (min-width: 1150px) {
+        flex-direction: row;
+        gap: 30px;
+    }
+}
+
+.col-100 {
+    width: 100%;
+    min-width: 600px;
+}
+
+.col-40 {
+    width: 40%;
+}
+
+.col-60 {
+    width: 60%;
+}
+  
+.justify-center {
+    align-items: center;
+    text-align: center;
+}
+  

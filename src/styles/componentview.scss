@@ -1,0 +1,23 @@
+@use './tokens.scss';
+
+.component-view {
+    width: 560px;
+    height: 500px;
+    border: 3px solid tokens.$colors-neutral-deepfog;
+
+    &.component-code {
+        background-color: tokens.$colors-neutral-white;
+        @media only screen and (min-width: 1150px) {
+            width: 400px;
+        }
+    }
+}
+
+
+.comp-view-dark {
+    background-color: tokens.$colors-neutral-lightblack;
+}
+
+.comp-view-light {
+    background-color: tokens.$colors-neutral-white;
+}

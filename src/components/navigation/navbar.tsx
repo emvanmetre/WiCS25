@@ -49,24 +49,24 @@ const Navbar = (props: NavbarProps) => {
       <nav className={navClasses}>
         <NavList size="sm">
           <Menu icon="menu" iconSize="lg" iconColor="colors-primary-grape" buttonColor="blank">
-            <MenuItem isDisabled textValue="About">
-              <Link to="/about" type="nav-menu" selected={currPath === '/about'}>
+            <MenuItem isDisabled textValue="Explore Components">
+              <Link to="/explore" type="nav-menu" selected={currPath === '/explore'}>
                 <Text font="display" size="xxs" slot="label">
-                  About
+                  Explore Components
                 </Text>
               </Link>
             </MenuItem>
-            <MenuItem isDisabled textValue="Experience">
-              <Link to="/about" type="nav-menu" selected={currPath === '/about'}>
+            <MenuItem isDisabled textValue="Create">
+              <Link to="/create" type="nav-menu" selected={currPath === '/create'}>
                 <Text font="display" size="xxs" slot="label">
-                  Experience
+                  Create
                 </Text>
               </Link>
             </MenuItem>
-            <MenuItem isDisabled textValue="About 3">
-              <Link to="/project" type="nav-menu" selected={currPath === '/project'}>
+            <MenuItem isDisabled textValue="How to Use Bouquet">
+              <Link to="/howtouse" type="nav-menu" selected={currPath === '/howtouse'}>
                 <Text font="display" size="xxs" slot="label">
-                  GHH 2024
+                  How to Use Bouquet
                 </Text>
               </Link>
             </MenuItem>
@@ -88,19 +88,19 @@ const Navbar = (props: NavbarProps) => {
           </Text>
         </Link>
         <NavList>
-          <Link to="/project" type="nav" selected={currPath === '/project'}>
+          <Link to="/howtouse" type="nav" selected={currPath === '/howtouse'}>
             <Text font="display" size="xs">
-              GHH 2024
+              How to Use Bouquet
             </Text>
           </Link>
-          <Link to="/about" type="nav" selected={currPath === '/about'}>
+          <Link to="/create" type="nav" selected={currPath === '/create'}>
             <Text font="display" size="xs">
-              About
+              Create
             </Text>
           </Link>
-          <Link to="/about" type="nav" selected={currPath === '/about'}>
+          <Link to="/explore" type="nav" selected={currPath === '/explore'}>
             <Text font="display" size="xs">
-              Experience
+              Explore
             </Text>
           </Link>
         </NavList>
