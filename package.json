@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "npm run build && concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd server && node index.js",
+    "server": "node server/index.js",
     "client": "react-scripts start",
     "build": "npm run style-build && react-scripts build",
     "style-build": "npx tsc --outDir ./build && node scripts-js/export-tokens.js && node scripts-js/compile-scss.js",

@@ -22,3 +22,5 @@ router.get('/Bouquet', async (req, res) => {
   }
   res.end()
 })
+
+export default router

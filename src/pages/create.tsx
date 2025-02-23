@@ -9,7 +9,7 @@ const Create = () => {
   return (
     <>
       <div className="wide-flex-col content col-100 nav-space">
-        <ComponentView></ComponentView>
+        <ComponentView id="67bb5cbb7ff32a6b3ae83f4c"></ComponentView>
       </div>
     </>
   )

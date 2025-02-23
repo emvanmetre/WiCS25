@@ -43,9 +43,9 @@ const ComponentView = (props: ComponentViewProps) => {
 
   const changeTab = (newTab: string) => {
     setTab(newTab)
-    if (newTab == 'html') {
+    if (newTab === 'html') {
       setCurTabText(htmlText)
-    } else if (newTab == 'css') {
+    } else if (newTab === 'css') {
       setCurTabText(cssText)
     } else {
       setCurTabText(jsText)
@@ -59,9 +59,9 @@ const ComponentView = (props: ComponentViewProps) => {
   }
 
   const updateText = (text: string) => {
-    if (tab == 'html') {
+    if (tab === 'html') {
       setHtmlText(text)
-    } else if (tab == 'css') {
+    } else if (tab === 'css') {
       setCssText(text)
     } else {
       setJsText(text)
@@ -70,32 +70,47 @@ const ComponentView = (props: ComponentViewProps) => {
     setHtmlDisplay(SafeHTMLDisplay(text))
   }
 
-  const axiosFetchData = async processing => {
-    await axios
-      .get('http://localhost:4000/Bouquet')
-      .then(res => {
-        if (processing) {
-          setData(res.data)
-        }
-      })
-      .catch(err => console.log(err))
-  }
+  useEffect(() => {
+    let processing = true
+    const axiosFetchData = async processing => {
+      await axios
+        .get(`http://localhost:4001/Bouquet/${props.id}`, {
+          withCredentials: true, // Required if using credentials
+        })
+        .then(res => {
+          console.log(res)
+          if (processing) {
+            setHtmlText(res.data.html)
+            setCssText(res.data.css)
+            setJsText(res.data.js)
+            updateText(res.data.html)
+          }
+        })
+        .catch(err => console.log(err))
+    }
+    axiosFetchData(processing)
+  }, [])
 
   const axiosPostData = async () => {
     const postData = {
       name: '',
-      id: '',
       html: htmlText,
       css: cssText,
       js: jsText,
     }
 
-    await axios.post('http://localhost:4000/Bouquet').then(res => setErrors(res.data))
+    await axios
+      .post('http://localhost:4001/post', postData)
+      .then(res => setErrors(res.data))
+      .catch(err => setErrors(err.message))
   }
 
   const isScreenSmall = useMediaQuery({ maxWidth: '1150px' })
   return (
     <>
+      <Text font="display" size="lg">
+        Create a new component!
+      </Text>
       <div className="content col-100">
         <div className={`component-view ${bgDark ? 'comp-view-dark' : 'comp-view-light'}`}>
           {htmlDisplay}
@@ -144,8 +159,10 @@ const ComponentView = (props: ComponentViewProps) => {
       </div>
 
       <div>
-        <Button onPress={axiosPostData}>
-          <Text>Publish</Text>
+        <Button className="button-primary" onPress={axiosPostData}>
+          <Text font="display" size="xs" weight="semibold">
+            Publish
+          </Text>
         </Button>
         <Text>{errors}</Text>
       </div>

@@ -1,7 +1,7 @@
 @use './tokens.scss';
 
 .button {
-    padding: tokens.$size-spacing-4;
+    padding: tokens.$size-spacing-8 tokens.$size-spacing-32;
     border: none;
     border-radius: tokens.$size-spacing-4;
     &.border-radius-50 {
@@ -22,6 +22,10 @@
     &:not(.button-dark) {
         &.button-primary {
             background-color: tokens.$colors-primary-1;
+
+            .text {
+                color: tokens.$colors-neutral-cloud;
+            }
         }
         &.button-secondary {
             background-color: tokens.$colors-secondary-1;
@@ -44,6 +48,7 @@
     }
 
     &.toggle-btn {
+        padding: tokens.$size-spacing-4;
         background-color: tokens.$colors-neutral-lightmist;
         width: 33.34%;
         &:hover {
@@ -52,6 +57,10 @@
         &:active {
             background-color: tokens.$colors-neutral-deepfog;
         }
+
+        .text {
+            color: tokens.$colors-neutral-lightblack;
+        }
         &.selected {
             background-color: tokens.$colors-primary-1;
             &:hover {
@@ -59,6 +68,9 @@
             }
             &:active {
                 background-color: tokens.$colors-primary-violet;
+            }
+            .text {
+                color: tokens.$colors-neutral-cloud;
             }
         }
     }
